@@ -1,17 +1,17 @@
-package excercise_thread_oom;
+package com.excercise.thread.oom;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class demoThreadOom {
+public class DemoThreadOom {
 
 	public static void main(String[] args) {
 		ExecutorService executor = Executors.newFixedThreadPool(1);
 
-		createArrayOfHell c = new createArrayOfHell();
-		List<createArrayOfHell> list = new ArrayList<createArrayOfHell>();
+		CreateArrayOfHell c = new CreateArrayOfHell();
+		List<CreateArrayOfHell> list = new ArrayList<CreateArrayOfHell>();
 		for (int i = 0; i <= 100; i++) {
 			list.add(c);
 		}
@@ -21,6 +21,5 @@ public class demoThreadOom {
 				t.run();
 			});
 		});
-
 	}
 }
