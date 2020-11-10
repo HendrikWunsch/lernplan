@@ -1,21 +1,18 @@
 package com.excercise.spring;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
 public class DependencyInjectionDemo {
 
+	@SuppressWarnings("resource")
 	public static void main(String[] args) {
 	
-		Camshaft combustionCamshaft = new Camshaft();
-		Crankshaft combustionCrankshaft = new Crankshaft();
-		CombustionEngine combustionEngine = new CombustionEngine(combustionCamshaft, combustionCrankshaft);
-		Car combustionCar = new Car(combustionEngine);
-		combustionCar.start();
 		
-		Camshaft electricCamshaft = new Camshaft();
-		Crankshaft electricCrankshaft = new Crankshaft();
-		ElectricEngine electricEngine = new ElectricEngine(electricCamshaft,electricCrankshaft);
-		Car electricCar = new Car(electricEngine);
-		electricCar.start();
-
+		ApplicationContext context =  new AnnotationConfigApplicationContext(AnnotationConfig.class);
+		Car car = context.getBean(Car.class);
+		car.start();
+		
 	}
 
 }
