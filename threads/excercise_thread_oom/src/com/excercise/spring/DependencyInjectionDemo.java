@@ -4,12 +4,15 @@ public class DependencyInjectionDemo {
 
 	public static void main(String[] args) {
 	
-		CombustionEngine combustionEngine = new CombustionEngine();
+		Camshaft combustionCamshaft = new Camshaft();
+		Crankshaft combustionCrankshaft = new Crankshaft();
+		CombustionEngine combustionEngine = new CombustionEngine(combustionCamshaft, combustionCrankshaft);
 		Car combustionCar = new Car(combustionEngine);
 		combustionCar.start();
 		
-		
-		ElectricEngine electricEngine = new ElectricEngine();
+		Camshaft electricCamshaft = new Camshaft();
+		Crankshaft electricCrankshaft = new Crankshaft();
+		ElectricEngine electricEngine = new ElectricEngine(electricCamshaft,electricCrankshaft);
 		Car electricCar = new Car(electricEngine);
 		electricCar.start();
 
