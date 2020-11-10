@@ -9,7 +9,7 @@ public class DependencyInjectionDemo {
 	public static void main(String[] args) {
 	
 		
-		ApplicationContext context =  new AnnotationConfigApplicationContext(AnnotationConfig.class);
+		ApplicationContext context =  new AnnotationConfigApplicationContext(AutomatedAnnotationConfig.class);
 		Car car = context.getBean(Car.class);
 		car.start();
 		
